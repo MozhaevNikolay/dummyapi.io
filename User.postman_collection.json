@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "78468bdf-0ba0-41b4-8ed6-30cf77fd914c",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LIST",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "cat",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "dog",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "desk",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "60d0fe4f5311236168a109dc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\":\"5777\",\r\n\"title\":\"mr\",\r\n\"firstName\":\"Sara\",\r\n\"lastName\":\"Conor\",\r\n\"gender\":\"female\",\r\n\"email\":\"string@emaeil.com\",\r\n\"dateOfBirth\":\"1/2/1900\",\r\n\"phone\":\"89891111111\",\r\n\"picture\":\"https://i.pinimg.com/564x/01/6b/86/016b86df2200d0b3a456d0a32d4cd6ee.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "cat",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "dog",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "desk",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\":\"miss\",\r\n\"firstName\":\"Sara\",\r\n\"lastName\":\"Conor\",\r\n\"gender\":\"female\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "cat",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "dog",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "desk",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ff86576ce86fc4e0807ecc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\":\"5777\",\r\n\"title\":\"mr\",\r\n\"firstName\":\"Sara\",\r\n\"lastName\":\"Conor\",\r\n\"gender\":\"female\",\r\n\"dateOfBirth\":\"1/2/1901\",\r\n\"phone\":\"89891111111\",\r\n\"picture\":\"https://i.pinimg.com/564x/01/6b/86/016b86df2200d0b3a456d0a32d4cd6ee.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "cat",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "dog",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "desk",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ff8d266ce86f6bdd807f3c"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

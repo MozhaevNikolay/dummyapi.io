@@ -1,0 +1,2945 @@
+{
+	"info": {
+		"_postman_id": "1d9d6c4b-c91d-4a6a-8d0d-89590f7361db",
+		"name": "Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.\tПолучить список постов, отсортированных по дате создания",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.\tПолучить список постов при Page=0 Limit=пусто Created=0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?page=0&limit&created=0",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": null
+						},
+						{
+							"key": "created",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.\tПолучить список постов при Page=999 Limit=5 Created=пусто",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?page=999&limit=5&created=",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "999"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "created",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.\tПолучить список постов при Page=пусто Limit=50 Created=1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?page=&limit=50&created=1",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": ""
+						},
+						{
+							"key": "limit",
+							"value": "50"
+						},
+						{
+							"key": "created",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5.\tНевозможность получить список постов, расположенных на стр.1000",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?page=1000",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1000"
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6.\tНевозможность получить список постов, расположенных на стр Page=(Латиница)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?page=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm"
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7.\tНевозможность получить список постов из 4 штук на одной странице",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?limit=4",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "4"
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8.\tНевозможность получить список постов из 51 штук на одной странице",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?limit=51",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "51"
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9.\tНевозможность получить список постов с limit=(Латиница)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?limit=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "storm"
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10.\tНевозможность получить список постов при created=2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?created=2",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11.\tНевозможность получить список постов при created= (Латиница)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post?created=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "storm"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12.\tПолучить список постов, созданных пользователем",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13.\tПолучить список постов, созданных пользователем при Page=0 limit=пусто Created=0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?page=0&limit&created=0",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": null
+						},
+						{
+							"key": "created",
+							"value": "0"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14.\tПолучить список постов, созданных пользователем при Page=999 limit=5 Created=пусто",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?page=999&limit=5&created=",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "999"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "created",
+							"value": ""
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15.\tПолучить список постов, созданных пользователем при Page=пусто limit=50 Created=1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?page=&limit=50&created=1",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": ""
+						},
+						{
+							"key": "limit",
+							"value": "50"
+						},
+						{
+							"key": "created",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16.\tНевозможность получить список постов, созданных пользователем при Page=1000",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?page=1000",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1000"
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17.\tНевозможность получить список постов, созданных пользователем при Page=(Латиница)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?page=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm"
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18.\tНевозможность получить список постов, созданных пользователем при limit=4",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?limit=4",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "4"
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19.\tНевозможность получить список постов, созданных пользователем при limit=51",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?limit=51",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "51"
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20.\tНевозможность получить список постов, созданных пользователем при limit=(Латиница)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?limit=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "storm"
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21.\tНевозможность получить список постов, созданных пользователем при created=(Латиница)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?created=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "storm"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22.\tНевозможность получить список постов, созданных пользователем при created=2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user/:id/post?created=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "storm"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61fecd49c00ac5864a54ab93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "23.\tПолучить список постов по тегу",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "24.\tПолучить список постов по тегу при Page=0 Limit=пусто Created=0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?page=0&limit&created=0",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": null
+						},
+						{
+							"key": "created",
+							"value": "0"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "25.\tПолучить список постов по тегу при Page=999 Limit=5 Created=пусто",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?page=999&limit=5&created=",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "999"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "created",
+							"value": ""
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "26.\tПолучить список постов по тегу при Page=пусто Limit=50 Created=1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?page=&limit=50&created=1",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": ""
+						},
+						{
+							"key": "limit",
+							"value": "50"
+						},
+						{
+							"key": "created",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "27.\tНевозможность получить список постов по тегу при Page=1000",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?page=1000",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1000"
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "28.\tНевозможность получить список постов по тегу при Page=(Латиница)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?page=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm"
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "29.\tНевозможность получить список постов по тегу при Limit=(Латиница)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?limit=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "storm"
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "30.\tНевозможность получить список постов по тегу при Limit=4",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?limit=4",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "4"
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "31.\tНевозможность получить список постов по тегу при Limit=51",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?limit=51",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "51"
+						},
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "32.\tНевозможность получить список постов по тегу при Created=2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?created=2",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "51",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "2"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "33.\tНевозможность получить список постов по тегу при Created=(Латиница)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/tag/:id/post?created=storm",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"tag",
+						":id",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "storm",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "51",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "storm"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "34.\tПолучить пост по id поста",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa151c80e3c1eaa945546"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "35.\tСоздать пост",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"слон вышел погулять\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"tags\":\"dog\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "36.\tСоздать пост со значениями text=6(символов) likes=0 tags=(Латиница)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Дорога\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"0\",\r\n\"tags\":\"Dog\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "37.\tСоздать пост со значениями text=50(символов латиница) likes=(пусто) tags=(Кириллица)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdas\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"\",\r\n\"tags\":\"Собака\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "38.\tСоздать пост со значениями text=6(символов) likes=1 tags=(пусто)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"дорога\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"1\",\r\n\"tags\":\"\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "39.\tСоздать пост со значениями text=6(символов) likes=40 tags=(цифра)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"дорога\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"40\",\r\n\"tags\":\"12\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "40.\tНевозможность создать пост с несуществующим пользователем",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"дорога\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"40\",\r\n\"tags\":\"собака\",\r\n\"owner\":\"61аааfecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "41.\tНевозможность создать пост с значением text=5(символов)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"короб\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"40\",\r\n\"tags\":\"собака\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "42.\tНевозможность создать пост с значением text=51(символ)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"коробййцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцу\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"40\",\r\n\"tags\":\"собака\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "43.\tНевозможность создать пост с text - пустое поле",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"40\",\r\n\"tags\":\"собака\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "44.\tНевозможность создать пост с значением likes=(Латиница)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Дорога\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"many\",\r\n\"tags\":\"собака\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "45.\tНевозможность создать пост с значением likes=(Кириллица)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Дорога\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"много\",\r\n\"tags\":\"собака\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/create",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "46.\tИзменить поля поста text=6(символов) likes=0 tags=(Латиница)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Дом\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"10\",\r\n\"tags\":\"Elephant\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "47.Изменить поля поста text=50(символов латиница) likes=пусто tags=(Кириллица)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Дорога\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"0\",\r\n\"tags\":\"Elephant\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "48.\tИзменить поля поста text=6(символов) likes=1 tags=(пусто)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"asasasasasasasasasasasasasasasasasasasasasasasasas\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"\",\r\n\"tags\":\"слон\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "49.\tИзменить поля поста text=6(символов) likes=40 tags=(цифра)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Дорога\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"1\",\r\n\"tags\":\"\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "50.\tНевозможность внести изменения в пост с значением text=5(символов)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Дорога\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"40\",\r\n\"tags\":\"22\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "51.\tНевозможность внести изменения в пост с значением text=51(символ)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"короб\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"1\",\r\n\"tags\":\"Ящик\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "52.\tНевозможность внести изменения в пост где поле text = (пусто)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"коробййцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцуйцу\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"1\",\r\n\"tags\":\"Ящик\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "53.\tНевозможность внести изменения в пост с значением lakes=(Латиница)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"1\",\r\n\"tags\":\"Ящик\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "54.\tНевозможность внести изменения в пост с значением lakes=(Кириллица)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Улица в снегу\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"many\",\r\n\"tags\":\"Ящик\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "55.\tНевозможность изменить автора поста",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Улица в снегу\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"много\",\r\n\"tags\":\"Ящик\",\r\n\"owner\":\"61fecd49c00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "56.\tУдалить пост",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\":\"Улица в снегу\",\r\n\"image\":\"https://zooclub.ru/attach/fotogal/oboi/wild/26.jpg\",\r\n\"likes\": \"много\",\r\n\"tags\":\"Ящик\",\r\n\"owner\":\"fc00ac5864a54ab93\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ffa5523514025d7cac1f77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "61fe8e0910c0b8b9a3afdbce",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/post/:id",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"post",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61ff875ec80e3c344c944b82"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
